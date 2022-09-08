@@ -119,7 +119,7 @@ def main():
 
         scanned_area_flags = scan_list[3:6]
 
-        if scanned_area_flags != 
+       if scanned_area_flags != 
 
 
 
