@@ -4,7 +4,6 @@ from picar_4wd.servo import Servo #import picar servo object #do we need this?
 from picar_4wd.pwm import PWM     #import picar PWM object #do we need this?
 from picar_4wd.filedb import FileDB #import picar config file #do we need this?
 
-#do we need all of this initial value setup stuff? got it we need it because scan_step was redefined in this program
 
 #read configuration values from config file
 config = FileDB("config")
