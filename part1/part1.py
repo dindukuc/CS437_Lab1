@@ -11,7 +11,8 @@ config = FileDB("config")
 #set servo offset value from config file
 ultrasonic_servo_offset = int(config.get('ultrasonic_servo_offset', default_value = 0))
 
-
+#initial variables setup
+#Most of this setup was taken from each of the initialization of the servo, PWM and FileDB files
 speed = 1
 # Ultrasonic
 ANGLE_RANGE = 180

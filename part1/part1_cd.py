@@ -47,9 +47,11 @@ def main():
             if direction == 0:
                 fc.turn_left(speed)
                 time.sleep(0.4)
+                print("left")
             else:
                 fc.turn_right(speed)
                 time.sleep(0.4)
+                print("right")
 
         else:
             fc.forward(speed)
