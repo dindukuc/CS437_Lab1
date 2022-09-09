@@ -43,9 +43,9 @@ def main():
             continue
         elif len(scan_list) != 10:
             continue
-        scanned_area_flags = scan_list[3:6]
+        scanned_area_flags = scan_list[3:7]
 
-        if scanned_area_flags != [2,2,2]:
+        if scanned_area_flags != [2,2,2,2]:
             fc.stop()
             backup()
             chooseOtherPath()
@@ -57,7 +57,7 @@ def backup():
     global scanned_area_flags
     
     #keeps moving backwards until the picar doesn't detect anything infront of it
-    while scanned_area_flags != [2,2,2]:
+    while scanned_area_flags != [2,2,2,2]:
         fc.backward(1) 
         #get ultrasonic values
         scan_list = scan_step(35)
@@ -66,7 +66,7 @@ def backup():
         elif len(scan_list) != 10:
             continue
         #only keep the ultrasonic values that are in-front of the picar
-        scanned_area_flags = scan_list[3:6]
+        scanned_area_flags = scan_list[3:7]
 
 
 #function that chooses which way to turn based on the direction of the obstacle

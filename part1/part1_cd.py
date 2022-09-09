@@ -7,7 +7,7 @@ random.seed()
 
 def backup(scanned_area_flags, speed):
 
-    while scanned_area_flags != [2, 2, 2]:
+    while scanned_area_flags != [2, 2, 2, 2]:
         fc.backward(speed)    
         
         scan_list = fc.scan_step(35)
@@ -16,7 +16,7 @@ def backup(scanned_area_flags, speed):
         elif len(scan_list) != 10:
             continue;
 
-        scanned_area_flags = scan_list[3:6]
+        scanned_area_flags = scan_list[3:7]
 
         
 
@@ -31,9 +31,9 @@ def avoid_obstacle(speed):
         elif len(scan_list) != 10:
             continue;
 
-        scanned_area_flags = scan_list[3:6]
+        scanned_area_flags = scan_list[3:7]
         
-        if scanned_area_flags != [2, 2, 2]:
+        if scanned_area_flags != [2, 2, 2, 2]:
             
             fc.stop()
             backup(scanned_area_flags, speed)
