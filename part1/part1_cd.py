@@ -5,11 +5,7 @@ import picar_4wd as fc #import picar object as fc
 #seed random functions
 random.seed()
 
-#global vars
-speed = 30
-
-
-def backup(fc, scanned_area_flags):
+def backup(scanned_area_flags, speed):
 
     while scanned_area_flags != [2, 2, 2]:
         fc.backward(speed)    
@@ -25,7 +21,7 @@ def backup(fc, scanned_area_flags):
         
 
 
-def main():
+def avoid_obstacle(speed):
     direction = 0 #0 is left and 1 is right
 
     while(True):
@@ -40,7 +36,7 @@ def main():
         if scanned_area_flags != [2, 2, 2]:
             
             fc.stop()
-            backup(fc, scanned_area_flags)
+            backup(scanned_area_flags, speed)
             fc.stop()
             
             direction = random.randint(0, 1) % 2
@@ -61,8 +57,8 @@ def main():
 
 
 if __name__ == "__main__":
-    
+    speed = 30
     try:
-        main()
+        avoid_obstacle(speed)
     finally:
         fc.stop()
