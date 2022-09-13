@@ -1,6 +1,7 @@
 # import picar_4wd as fc
 # import time
 import sys
+from turtle import clear
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -164,6 +165,105 @@ def get_path(goal):
 
 
 
+def forward_heading(coord, next_coord):
+
+    if next_coord[0] > coord[0]:
+        return "right", "right"
+    elif next_coord[0] < coord[0]:
+        return "left", "left"
+    elif next_coord[1] > coord[1]:
+        return "forward", "forward"
+    elif next_coord[1] < coord[1]:
+        return "backward", "forward"
+
+
+def right_heading(coord, next_coord):
+
+    if next_coord[0] > coord[0]:
+        return "forward", "right"
+    elif next_coord[0] < coord[0]:
+        return "backward", "right"
+    elif next_coord[1] > coord[1]:
+        return "left", "forward"
+    elif next_coord[1] < coord[1]:
+        return "right", "backward"
+
+def left_heading(coord, next_coord):
+
+    if next_coord[0] > coord[0]:
+        return "backward", "left"
+    elif next_coord[0] < coord[0]:
+        return "forward", "left"
+    elif next_coord[1] > coord[1]:
+        return "right", "forward"
+    elif next_coord[1] < coord[1]:
+        return "left", "backward"
+
+def backward_heading(coord, next_coord):
+
+    if next_coord[0] > coord[0]:
+        return "left", "right"
+    elif next_coord[0] < coord[0]:
+        return "right", "left"
+    elif next_coord[1] > coord[1]:
+        return "backward", "backward"
+    elif next_coord[1] < coord[1]:
+        return "forward", "backward"
+
+
+
+
+
+def commands(path):
+    command_list = []
+    next_coord = (-1, -1)
+    temp = ""
+    heading = "forward"
+
+    # print(len(path))
+
+    for idx, coord in enumerate(path):
+        
+
+        if idx + 1 >= len(path):
+            return command_list
+        
+        next_coord = path[idx+1]
+
+        # print("here at idx: ", idx, coord, next_coord)
+
+
+        if heading == "forward":
+            temp, heading = forward_heading(coord, next_coord)
+            command_list.append(temp)
+            # print("here at idx: ", idx, temp)
+            # print(temp)
+            
+
+        elif heading == "right":
+            temp, heading = right_heading(coord, next_coord)
+            command_list.append(temp)
+            # print("here at idx: ", idx, temp)
+            # print(temp)
+        
+        elif heading == "left":
+            temp, heading = left_heading(coord, next_coord)
+            command_list.append(temp)
+            # print("here at idx: ", idx, temp)
+            # print(temp)
+        
+        elif heading == "backward":
+            temp, heading = backward_heading(coord, next_coord)
+            command_list.append(temp)
+            # print("here at idx: ", idx, temp)
+            # print(temp)            
+        
+
+
+
+
+
+
 
 
 
@@ -173,22 +273,26 @@ if __name__ == "__main__":
     goal = Point(89, 89, 0)
     
     grid = np.zeros((90,90))
-    grid[89,5] = 1
-    grid[89,6] = 1
-    grid[89,7] = 1
-    grid[89,8] = 1
+    grid[51, 0:50] = 1
 
 
     all_nodes_list = convert_grid(grid)
     goal = a_star(all_nodes_list, start, goal)
 
     path = get_path(goal)
+    # print(path)
 
     for coord in path:
         grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
 
-    print("Lenght of path: ", len(path))
+    # print("Lenght of path: ", len(path))
     # print(grid[89,8])
 
+    # curr_heading = "forward"
+    
+    command_path = commands(path)
+
+    print(command_path)
+    print("left" in command_path)
     plt.imshow(grid, origin="lower")
     plt.show()
