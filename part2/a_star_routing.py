@@ -280,7 +280,7 @@ if __name__ == "__main__":
     goal = a_star(all_nodes_list, start, goal)
 
     path = get_path(goal)
-    # print(path)
+    print(path)
 
     for coord in path:
         grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
@@ -293,6 +293,6 @@ if __name__ == "__main__":
     command_path = commands(path)
 
     print(command_path)
-    print("left" in command_path)
+    # print("left" in command_path)
     plt.imshow(grid, origin="lower")
     plt.show()
