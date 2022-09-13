@@ -159,7 +159,7 @@ def get_path(goal):
         curr_node = curr_node.parent
     
     path.reverse()
-    print(path)
+    # print(path)
     return path
 
 
@@ -173,15 +173,22 @@ if __name__ == "__main__":
     goal = Point(89, 89, 0)
     
     grid = np.zeros((90,90))
-    # grid[89,89] = 4
+    grid[89,5] = 1
+    grid[89,6] = 1
+    grid[89,7] = 1
+    grid[89,8] = 1
 
 
     all_nodes_list = convert_grid(grid)
     goal = a_star(all_nodes_list, start, goal)
 
-    get_path(goal)
+    path = get_path(goal)
 
-    # print(all_nodes_list["50,0"].key)
+    for coord in path:
+        grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
 
-    # plt.imshow(grid, origin="lower")
-    # plt.show()
+    print("Lenght of path: ", len(path))
+    # print(grid[89,8])
+
+    plt.imshow(grid, origin="lower")
+    plt.show()
