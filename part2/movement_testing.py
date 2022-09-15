@@ -18,3 +18,4 @@ def move_forward():
 
 if __name__ == "__main__":
     fc.turn_left(25)
+    fc.stop()
