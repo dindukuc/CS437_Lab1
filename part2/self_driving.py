@@ -1,4 +1,4 @@
-import picar_4wd as fc
+# import picar_4wd as fc
 import time
 import sys
 import numpy as np
@@ -21,6 +21,32 @@ def turn_90_right():
     fc.turn_right(33)
     time.sleep(1)
     fc.stop()
+
+def move_1cm_back():
+    fc.backward(5)
+    time.sleep(.05)
+    fc.stop()
+
+
+
+def move(cmd):
+    if cmd == "forward":
+        move_1cm()
+    
+    elif cmd == "left":
+        turn_90_left()
+        move_1cm()
+    
+    elif cmd == "right":
+        turn_90_right()
+        move_1cm()
+    
+    elif cmd == "backward":
+        move_1cm_back()
+    
+    
+
+
 # ***************** Movement functions end***************
 
 # ***************** A* functions***************
@@ -42,6 +68,8 @@ class Point:
 
     def __eq__(self, other):
         return self.key == other.key
+
+
 
 
 def convert_grid(grid):
@@ -67,6 +95,7 @@ def key_gen(x, y):
     return str(x) + "," + str(y)
 
 
+
 def compute_successors(node, all_nodes_list, goal):
     successors = [] 
     coords = []
@@ -86,7 +115,7 @@ def compute_successors(node, all_nodes_list, goal):
 
 
     #fourth successor y+1
-    if node.y+1 <= 89:
+    if node.y+1 <= 99:
         coords.append((node.x, node.y+1))
     
     # print(coords)
@@ -161,7 +190,7 @@ def a_star(all_nodes_list, start, goal):
         # print(curr_node.key)
         closed.append(curr_node)
         
-        
+         
 def get_path(goal):
     path = []
     curr_node = goal
@@ -173,7 +202,6 @@ def get_path(goal):
     path.reverse()
     # print(path)
     return path
-
 
 
 def forward_heading(coord, next_coord):
@@ -221,11 +249,12 @@ def backward_heading(coord, next_coord):
         return "forward", "backward"
 
 
-def commands(path):
+def commands(path, heading):
     command_list = []
     next_coord = (-1, -1)
     temp = ""
-    heading = "forward"
+    # heading = "forward"
+    heading_list = []
 
     # print(len(path))
 
@@ -233,7 +262,7 @@ def commands(path):
         
 
         if idx + 1 >= len(path):
-            return command_list
+            return command_list, heading_list
         
         next_coord = path[idx+1]
 
@@ -243,6 +272,7 @@ def commands(path):
         if heading == "forward":
             temp, heading = forward_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)
             
@@ -250,20 +280,58 @@ def commands(path):
         elif heading == "right":
             temp, heading = right_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)
         
         elif heading == "left":
             temp, heading = left_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)
         
         elif heading == "backward":
             temp, heading = backward_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)            
+        
+
+
+
+def search(grid, start, goal):
+    start = Point(start[0], start[1], 0)
+    goal = Point(goal[0], goal[1], 0)
+    
+    # grid = np.zeros((90,100))
+    # grid[51, 0:50] = 1
+
+
+    all_nodes_list = convert_grid(grid)
+    goal = a_star(all_nodes_list, start, goal)
+
+    path = get_path(goal)
+    # print(path)
+
+    for coord in path:
+        grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
+
+    grid[89, 99] = 4
+    # print("Lenght of path: ", len(path))
+    # print(grid[89,8])
+
+    curr_heading = "forward"
+    
+    command_path, heading_path = commands(path, curr_heading)
+
+    return path, command_path, heading_path
+    # print(command_path)
+    # print(heading_path)
+    # print("left" in command_path)
+    plt.imshow(grid, origin="lower")
+    plt.show()
 
 
 # ***************** A* functions end***************
@@ -274,7 +342,47 @@ def commands(path):
 
 
 
-
 if __name__ == "__main__":
-    pass;
+    actual_path_taken = []
+    
+    grid = np.zeros((90,100))
+    # grid[51, 0:50] = 1
+    path = []
+    cmd_list = []
+    heading_list = []
+
+    curr_pos = (50, 0)
+    goal = (89, 99)
+    heading = "forward"
+
+    # while curr_pos != goal:
+        #reset heading so the car is now facing forwards
+        # heading = "forward"
+        
+        #print(curr_pos)
+        # grid = mapping_function(curr_pos) #mapping function goes here, takes curr_pos and returns grid
+        #print(grid)
+
+        # time.sleep(.001)
+
+        # path, cmd_list, heading_list = search(grid, curr_pos, goal)
+
+        # time.sleep(.001)
+
+        # print(path)
+        # print(cmd_list)
+        # print(heading_list)
+
+        # for i in range(10):
+        #     while object_detected() == True:
+        #         print("Stop Sign detected! Waiting...")
+            
+        #     move(cmd_list[i])
+        #     time.sleep(.001)
+        #     actual_path_taken.append(curr_pos)
+        #     curr_pos = path[i+1]
+
+
+
+
 

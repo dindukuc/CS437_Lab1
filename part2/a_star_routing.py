@@ -1,7 +1,7 @@
 # import picar_4wd as fc
 # import time
 import sys
-from turtle import clear
+from turtle import clear, heading
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -219,6 +219,7 @@ def commands(path, heading):
     next_coord = (-1, -1)
     temp = ""
     # heading = "forward"
+    heading_list = []
 
     # print(len(path))
 
@@ -226,7 +227,7 @@ def commands(path, heading):
         
 
         if idx + 1 >= len(path):
-            return command_list
+            return command_list, heading_list
         
         next_coord = path[idx+1]
 
@@ -236,6 +237,7 @@ def commands(path, heading):
         if heading == "forward":
             temp, heading = forward_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)
             
@@ -243,18 +245,21 @@ def commands(path, heading):
         elif heading == "right":
             temp, heading = right_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)
         
         elif heading == "left":
             temp, heading = left_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)
         
         elif heading == "backward":
             temp, heading = backward_heading(coord, next_coord)
             command_list.append(temp)
+            heading_list.append(heading)
             # print("here at idx: ", idx, temp)
             # print(temp)            
         
@@ -291,9 +296,10 @@ if __name__ == "__main__":
 
     curr_heading = "forward"
     
-    command_path = commands(path, curr_heading)
+    command_path, heading_path = commands(path, curr_heading)
 
     print(command_path)
+    # print(heading_path)
     # print("left" in command_path)
     plt.imshow(grid, origin="lower")
     plt.show()
