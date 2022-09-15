@@ -18,5 +18,5 @@ def move_forward():
 
 if __name__ == "__main__":
     fc.turn_left(25)
-    time.sleep(.5)
+    time.sleep(1)
     fc.stop()

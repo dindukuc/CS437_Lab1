@@ -79,7 +79,7 @@ def test3():
         time.sleep(0.1)
         speed = speed4()
         x += speed * 0.1
-        print("%smm/s"%speed)
+        print("%smm/s" % speed, " pwr val: %s" % x)
     print("%scm"%x)
     speed4.deinit()
     fc.stop()
