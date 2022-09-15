@@ -1,11 +1,29 @@
-# import picar_4wd as fc
-# import time
+import picar_4wd as fc
+import time
 import sys
-from turtle import clear
 import numpy as np
 import matplotlib.pyplot as plt
 
 
+# ***************** Movement functions***************
+def move_1cm():
+    fc.forward(5)
+    time.sleep(.05)
+    fc.stop()
+
+
+def turn_90_left():
+    fc.turn_left(33)
+    time.sleep(1)
+    fc.stop()
+
+def turn_90_right():
+    fc.turn_right(33)
+    time.sleep(1)
+    fc.stop()
+# ***************** Movement functions end***************
+
+# ***************** A* functions***************
 #point object that stores the x,y coords and the key and object value flag
 class Point:
     x = -1
@@ -24,8 +42,6 @@ class Point:
 
     def __eq__(self, other):
         return self.key == other.key
-
-
 
 
 def convert_grid(grid):
@@ -51,7 +67,6 @@ def key_gen(x, y):
     return str(x) + "," + str(y)
 
 
-
 def compute_successors(node, all_nodes_list, goal):
     successors = [] 
     coords = []
@@ -71,7 +86,7 @@ def compute_successors(node, all_nodes_list, goal):
 
 
     #fourth successor y+1
-    if node.y+1 <= 99:
+    if node.y+1 <= 89:
         coords.append((node.x, node.y+1))
     
     # print(coords)
@@ -116,8 +131,6 @@ def lower_node_in_list(node, closed):
     return True
 
 
-
-
 def a_star(all_nodes_list, start, goal):
     closed = []
     open = []
@@ -149,8 +162,6 @@ def a_star(all_nodes_list, start, goal):
         closed.append(curr_node)
         
         
-        
-
 def get_path(goal):
     path = []
     curr_node = goal
@@ -175,7 +186,6 @@ def forward_heading(coord, next_coord):
         return "forward", "forward"
     elif next_coord[1] < coord[1]:
         return "backward", "forward"
-
 
 def right_heading(coord, next_coord):
 
@@ -211,14 +221,11 @@ def backward_heading(coord, next_coord):
         return "forward", "backward"
 
 
-
-
-
-def commands(path, heading):
+def commands(path):
     command_list = []
     next_coord = (-1, -1)
     temp = ""
-    # heading = "forward"
+    heading = "forward"
 
     # print(len(path))
 
@@ -257,9 +264,9 @@ def commands(path, heading):
             command_list.append(temp)
             # print("here at idx: ", idx, temp)
             # print(temp)            
-        
 
 
+# ***************** A* functions end***************
 
 
 
@@ -269,31 +276,5 @@ def commands(path, heading):
 
 
 if __name__ == "__main__":
-    start = Point(50, 0, 0)
-    goal = Point(89, 99, 0)
-    
-    grid = np.zeros((90,100))
-    grid[51, 0:50] = 1
+    pass;
 
-
-    all_nodes_list = convert_grid(grid)
-    goal = a_star(all_nodes_list, start, goal)
-
-    path = get_path(goal)
-    print(path)
-
-    for coord in path:
-        grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
-
-    grid[89, 99] = 4
-    # print("Lenght of path: ", len(path))
-    # print(grid[89,8])
-
-    curr_heading = "forward"
-    
-    command_path = commands(path, curr_heading)
-
-    print(command_path)
-    # print("left" in command_path)
-    plt.imshow(grid, origin="lower")
-    plt.show()

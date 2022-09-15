@@ -7,8 +7,8 @@ import sys
 
 
 def move_1cm():
-    fc.forward(10)
-    time.sleep(1)
+    fc.forward(5)
+    time.sleep(.05)
     fc.stop()
 
 
