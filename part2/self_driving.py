@@ -17,4 +17,4 @@ def move_forward():
 
 
 if __name__ == "__main__":
-    pass;
+    fc.turn_left(25)
