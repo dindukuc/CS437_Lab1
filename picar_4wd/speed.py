@@ -75,12 +75,12 @@ def test3():
     # time.sleep(2)
     fc.forward(100)
     x = 0
-    for i in range(20):
+    for i in range(10):
         time.sleep(0.1)
         speed = speed4()
         x += speed * 0.1
         print("%smm/s"%speed)
-    print("%smm"%x)
+    print("%scm"%x)
     speed4.deinit()
     fc.stop()
 if __name__ == "__main__":
