@@ -11,12 +11,12 @@ def move_forward():
 
 
 def turn_90_left():
-    fc.turn_left(25)
+    fc.turn_left(30)
     time.sleep(1)
     fc.stop()
 
 def turn_90_right():
-    fc.turn_right(25)
+    fc.turn_right(30)
     time.sleep(1)
     fc.stop()
 
