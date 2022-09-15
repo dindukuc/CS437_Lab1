@@ -10,13 +10,17 @@ def move_forward():
     pass;
 
 
+def turn_90_left():
+    fc.turn_left(25)
+    time.sleep(1)
+    fc.stop()
 
-
-
+def turn_90_right():
+    fc.turn_right(25)
+    time.sleep(1)
+    fc.stop()
 
 
 
 if __name__ == "__main__":
-    fc.turn_left(25)
-    time.sleep(1)
-    fc.stop()
+    turn_90_right()
