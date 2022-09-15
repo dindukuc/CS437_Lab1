@@ -27,7 +27,7 @@ class Speed():
             for _ in range(100):
                 l += str(GPIO.input(self.pin))
                 time.sleep(0.001)
-            # self.print_result(l)
+            self.print_result(l)
             count = (l.count("01") + l.count("10")) / 2
             rps = count / 20.0 * 10
             self.speed = round(2 * math.pi * 3.3 * rps, 2)
