@@ -84,7 +84,10 @@ def test3():
     speed4.deinit()
     fc.stop()
 if __name__ == "__main__":
-    test3()
+    try:
+        test3()
+    except:
+        fc.stop()
         
 
     
