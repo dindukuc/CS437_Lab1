@@ -23,11 +23,11 @@ class Speed():
 
     def fun_timer(self):
         while self.timer_flag:
-            # l = ""
+            l = ""
             for _ in range(100):
                 l += str(GPIO.input(self.pin))
                 time.sleep(0.001)
-            self.print_result(l)
+            # self.print_result(l)
             count = (l.count("01") + l.count("10")) / 2
             rps = count / 20.0 * 10
             self.speed = round(2 * math.pi * 3.3 * rps, 2)
@@ -78,7 +78,8 @@ def test3():
     for i in range(10):
         time.sleep(0.1)
         speed = speed4()
-        x += speed * 0.1
+        x = speed
+        # x += speed * 0.1
         print("%smm/s" % speed, " pwr val: %s" % x)
     print("%scm"%x)
     speed4.deinit()
