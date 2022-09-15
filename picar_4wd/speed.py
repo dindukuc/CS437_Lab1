@@ -23,7 +23,7 @@ class Speed():
 
     def fun_timer(self):
         while self.timer_flag:
-            l = ""
+            # l = ""
             for _ in range(100):
                 l += str(GPIO.input(self.pin))
                 time.sleep(0.001)
