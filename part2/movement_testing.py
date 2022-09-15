@@ -6,8 +6,10 @@ import sys
 
 
 
-def move_forward():
-    pass;
+def move_1cm():
+    fc.forward(10)
+    time.sleep(1)
+    fc.stop()
 
 
 def turn_90_left():
@@ -23,4 +25,7 @@ def turn_90_right():
 
 
 if __name__ == "__main__":
-    turn_90_right()
+    # turn_90_right()
+    # turn_90_left()
+    move_1cm()
+
