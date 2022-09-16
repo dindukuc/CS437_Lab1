@@ -400,6 +400,8 @@ if __name__ == "__main__":
             actual_path_taken.append(curr_pos)
             if i+1 < len(path):
                 curr_pos = path[i+1]
+            else:
+                break;
             
                 
     
