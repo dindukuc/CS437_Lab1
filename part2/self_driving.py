@@ -397,7 +397,7 @@ if __name__ == "__main__":
             if curr_pos == goal:
                 break;
 
-            # move(cmd_list[i])
+            move(cmd_list[i])
             curr_heading = heading_list[i]
             print("current position: ", curr_pos, "current i: ", i, "Len of cmd_list: ", len(cmd_list))
             time.sleep(.001)
