@@ -1,4 +1,4 @@
-# import picar_4wd as fc
+import picar_4wd as fc
 import time
 import sys
 import numpy as np
@@ -44,7 +44,21 @@ def move(cmd):
     elif cmd == "backward":
         move_1cm_back()
     
-    
+def reset_heading(curr_heading):
+
+    if curr_heading == "forward":
+        pass;
+    elif curr_heading == "left":
+        turn_90_right()
+    elif curr_heading == "right":
+        turn_90_left()
+    elif curr_heading == "backward":
+        turn_90_left()
+        time.sleep(.1)
+        turn_90_left()
+
+    return "forward"
+
 
 
 # ***************** Movement functions end***************
@@ -318,7 +332,7 @@ def search(grid, start, goal):
     for coord in path:
         grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
 
-    grid[89, 99] = 4
+    # grid[89, 99] = 4
     # print("Lenght of path: ", len(path))
     # print(grid[89,8])
 
@@ -326,13 +340,14 @@ def search(grid, start, goal):
     
     command_path, heading_path = commands(path, curr_heading)
 
+    # plt.imshow(grid, origin="lower")
+    # plt.show()
+
     return path, command_path, heading_path
     # print(command_path)
     # print(heading_path)
     # print("left" in command_path)
-    plt.imshow(grid, origin="lower")
-    plt.show()
-
+    
 
 # ***************** A* functions end***************
 
@@ -346,26 +361,30 @@ if __name__ == "__main__":
     actual_path_taken = []
     
     grid = np.zeros((90,100))
-    # grid[51, 0:50] = 1
+    grid[51, 0:50] = 1
     path = []
     cmd_list = []
     heading_list = []
 
     curr_pos = (50, 0)
     goal = (89, 99)
-    heading = "forward"
+    curr_heading = "forward"
 
-    # while curr_pos != goal:
+    while curr_pos != goal:
         #reset heading so the car is now facing forwards
-        # heading = "forward"
+        curr_heading = reset_heading()
         
         #print(curr_pos)
         # grid = mapping_function(curr_pos) #mapping function goes here, takes curr_pos and returns grid
         #print(grid)
 
+        grid = np.zeros((90,100))
+        grid[51, 0:50] = 1
+
+
         # time.sleep(.001)
 
-        # path, cmd_list, heading_list = search(grid, curr_pos, goal)
+        path, cmd_list, heading_list = search(grid, curr_pos, goal)
 
         # time.sleep(.001)
 
@@ -373,14 +392,27 @@ if __name__ == "__main__":
         # print(cmd_list)
         # print(heading_list)
 
-        # for i in range(10):
+        for i in range(10):
         #     while object_detected() == True:
         #         print("Stop Sign detected! Waiting...")
             
-        #     move(cmd_list[i])
-        #     time.sleep(.001)
-        #     actual_path_taken.append(curr_pos)
-        #     curr_pos = path[i+1]
+            move(cmd_list[i])
+            curr_heading = heading_list[i]
+            time.sleep(.001)
+            actual_path_taken.append(curr_pos)
+            if i+1 < len(path):
+                curr_pos = path[i+1]
+            
+                
+    
+    # print("Actual path matches a* path: ", len(actual_path_taken) == len(path))
+    
+    for coord in actual_path_taken:
+        grid[coord[0], coord[1]] = 2 # have to swap x and y because python is row major and just for visualization's sake
+    
+
+    plt.imshow(grid, origin="lower")
+    plt.show()
 
 
 
