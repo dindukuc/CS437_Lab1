@@ -370,7 +370,7 @@ if __name__ == "__main__":
 
     while curr_pos != goal:
         #reset heading so the car is now facing forwards
-        # curr_heading = reset_heading(curr_heading)
+        curr_heading = reset_heading(curr_heading)
         
         #print(curr_pos)
         # grid = mapping_function(curr_pos) #mapping function goes here, takes curr_pos and returns grid
