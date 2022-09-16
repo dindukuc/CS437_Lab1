@@ -1,4 +1,4 @@
-import picar_4wd as fc
+# import picar_4wd as fc
 import time
 import sys
 import numpy as np
@@ -370,7 +370,7 @@ if __name__ == "__main__":
 
     while curr_pos != goal:
         #reset heading so the car is now facing forwards
-        curr_heading = reset_heading(curr_heading)
+        # curr_heading = reset_heading(curr_heading)
         
         #print(curr_pos)
         # grid = mapping_function(curr_pos) #mapping function goes here, takes curr_pos and returns grid
@@ -383,6 +383,7 @@ if __name__ == "__main__":
         # time.sleep(.001)
 
         path, cmd_list, heading_list = search(grid, curr_pos, goal)
+        
 
         # time.sleep(.001)
 
@@ -393,15 +394,16 @@ if __name__ == "__main__":
         for i in range(10):
         #     while object_detected() == True:
         #         print("Stop Sign detected! Waiting...")
-            
-            move(cmd_list[i])
+            if curr_pos == goal:
+                break;
+
+            # move(cmd_list[i])
             curr_heading = heading_list[i]
+            print("current position: ", curr_pos, "current i: ", i, "Len of cmd_list: ", len(cmd_list))
             time.sleep(.001)
             actual_path_taken.append(curr_pos)
-            if i+1 < len(path):
-                curr_pos = path[i+1]
-            else:
-                break;
+            curr_pos = path[i+1]
+            
             
                 
     
