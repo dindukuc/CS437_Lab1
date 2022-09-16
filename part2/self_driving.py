@@ -83,7 +83,6 @@ class Point:
 
 
 
-
 def convert_grid(grid):
     all_nodes_list = {}
 
@@ -392,8 +391,10 @@ if __name__ == "__main__":
         # print(heading_list)
 
         for i in range(10):
-        #     while object_detected() == True:
-        #         print("Stop Sign detected! Waiting...")
+        #         run object detection function
+        #         while object_detected() == True:
+        #           print("Stop Sign detected! Waiting...")
+        #           run object detection function
             if curr_pos == goal:
                 break;
 
