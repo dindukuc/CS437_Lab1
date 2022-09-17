@@ -6,4 +6,3 @@ while True:
         print("detected stop sign!")
     else:
         print("No stop sign detected")
-
