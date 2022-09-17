@@ -148,11 +148,11 @@ def coordinates(AX):
         test_x = AX[i][0]
         test_y = AX[i][1]
         if (test_x > 0 and test_x < 100):
-           CRD[test_y,test_x] = 1
+           CRD[test_x,test_y] = 1
         #test.append([test_x,test_y])
         CRD_int = CRD.astype(int)
         CRD = CRD_int
-        np.savetxt('/home/pi/picar-4wd/labwork/crd_withIP.txt', CRD)
+        # np.savetxt('/home/pi/picar-4wd/labwork/crd_withIP.txt', CRD)
     print(CRD)
     
     return(CRD)
