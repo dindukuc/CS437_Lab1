@@ -1,4 +1,3 @@
-import sys
 import stop_sign_detection as st
 import time
 

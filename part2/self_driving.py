@@ -3,6 +3,7 @@ import time
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
+import stop_sign_detection as st
 
 
 # ***************** Movement functions***************
@@ -348,7 +349,12 @@ def search(grid, start, goal):
 
 # ***************** A* functions end***************
 
+# ***************** object detection functions***************
 
+def object_detected(fps):
+    return st.detect_stop_sign(fps)
+
+# ***************** object detection functions end***************
 
 
 
@@ -391,11 +397,11 @@ if __name__ == "__main__":
         # print(heading_list)
 
         for i in range(10):
-        #         run object detection function
-        #         while object_detected() == True:
-        #           print("Stop Sign detected! Waiting...")
-        #           time.sleep(4)
-        #           run object detection function
+            
+            while object_detected(15) == True:
+                print("STOP SIGN DETECTED! Waiting for 4 seconds before checking again...")
+                time.sleep(4)
+            
             if curr_pos == goal:
                 break;
 
