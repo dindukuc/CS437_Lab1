@@ -18,7 +18,7 @@ if __name__ == "__main__":
     
     while True:
         try:
-            if st.detect_stop_sign(1) == True:
+            if st.detect_stop_sign(30) == True:
                 print("DETECTED STOP SIGN!")
             else:
                 print("No stop sign detected")
