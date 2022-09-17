@@ -60,7 +60,7 @@ def place_objs(grid, obj_coords):
 def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
-    grid = place_objs(obj_coords)
+    grid = place_objs(grid, obj_coords)
     # do interpolation and padding
 
     return grid
