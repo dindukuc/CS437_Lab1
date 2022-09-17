@@ -23,4 +23,4 @@ if __name__ == "__main__":
             else:
                 print("No stop sign detected")
         except AttributeError:
-            pass
+            print("Caught exception from attribute error!")
