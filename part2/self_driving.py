@@ -521,7 +521,7 @@ if __name__ == "__main__":
     actual_path_taken = []
     
     grid = np.zeros((90,100))
-    # grid[51, 0:50] = 1
+    grid[51, 0:50] = 1
     path = []
     cmd_list = []
     heading_list = []
@@ -535,19 +535,19 @@ if __name__ == "__main__":
         curr_heading = reset_heading(curr_heading)
         
         print("Current Position: ", curr_pos)
-        grid = generate_grid(curr_pos) #mapping function goes here, takes curr_pos and returns grid
+        # grid = generate_grid(curr_pos) #mapping function goes here, takes curr_pos and returns grid
         #print(grid)
 
-        # grid = np.zeros((90,100))
-        # grid[51, 0:50] = 1
+        grid = np.zeros((90,100))
+        grid[51, 0:50] = 1
 
 
-        time.sleep(.001)
+        # time.sleep(.001)
 
         path, cmd_list, heading_list = search(grid, curr_pos, goal)
         
 
-        time.sleep(.001)
+        # time.sleep(.001)
 
         # print(path)
         # print(cmd_list)
