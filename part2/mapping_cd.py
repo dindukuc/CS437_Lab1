@@ -70,7 +70,7 @@ def mapping(grid, curr_pos):
 
 
 def main():
-    grid = np.array((90, 100))
+    grid = np.zeros((90, 100))
     curr_pos = (50, 0)
     grid = mapping(grid, curr_pos)
 
