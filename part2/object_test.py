@@ -22,5 +22,5 @@ if __name__ == "__main__":
                 print("DETECTED STOP SIGN!")
             else:
                 print("No stop sign detected")
-        except:
-            print()
+        except AttributeError:
+            pass
