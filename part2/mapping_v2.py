@@ -159,7 +159,7 @@ def coordinates(AX):
     
 def mapping(CRD):
     arr2 = np.array(CRD)
-    print(arr2.shape)
+    # print(arr2.shape)
     plt.imshow(arr2, origin="lower")
     #plt.plot(arr2)
     plt.show()  
