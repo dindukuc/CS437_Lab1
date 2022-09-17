@@ -10,7 +10,7 @@ import utils
 
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
-        enable_edgetpu: bool) -> bool:
+        enable_edgetpu: bool,fps) -> bool:
   """Continuously run inference on images acquired from the camera.
 
   Args:
@@ -26,7 +26,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   start_time = time.time()
   # Start capturing video input from the camera
   cap = cv2.VideoCapture(camera_id)
-  fps = cap.get(cv2.CAP_PROP_FPS)
+  cap.set(cv2.CAP_PROP_FPS, fps)
   #print("Frames per second using video.get(cv2.CAP_PROP_FPS) : {0}".format(fps))
   #cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
   #cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
@@ -46,6 +46,9 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     sys.exit('ERROR: Unable to read from webcam. Please verify your webcam settings.')
 
   image = cv2.flip(image, 1)
+  # Show the FPS
+  fps_out = cap.get(cv2.CAP_PROP_FPS)
+  print("FPS Rate :", fps_out)
 
   # Convert the image from BGR to RGB as required by the TFLite model.
   rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -62,7 +65,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
          return True
 
   end_time = time.time()
-  # Show the FPS
+
   cap.release()
   cv2.destroyAllWindows()
   return False
@@ -104,4 +107,4 @@ def detect_stop_sign(fps):
   args = parser.parse_args()
 
   return run(args.model, int(args.cameraId), args.frameWidth, args.frameHeight,
-      int(args.numThreads), bool(args.enableEdgeTPU))
+      int(args.numThreads), bool(args.enableEdgeTPU),fps)
