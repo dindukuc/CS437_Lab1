@@ -1,4 +1,5 @@
-import stop_sign_detection as st
+import sys
+from stopsign import stop_sign_detection as st
 
 
 while True:
