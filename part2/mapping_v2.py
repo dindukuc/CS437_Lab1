@@ -147,7 +147,7 @@ def coordinates(AX):
     
         test_x = AX[i][0]
         test_y = AX[i][1]
-        if (test_x > 0 and test_x < 100):
+        if (test_x > 0 and test_x < 90):
            CRD[test_x,test_y] = 1
         #test.append([test_x,test_y])
         CRD_int = CRD.astype(int)
