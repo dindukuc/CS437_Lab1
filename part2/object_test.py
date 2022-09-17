@@ -23,6 +23,7 @@ if __name__ == "__main__":
         while True:
             detect()
     except:
-        print("Some error detected...read log.txt")
-        exit()
+        pass;
+        # print("Some error detected...read log.txt")
+        # exit()
     
