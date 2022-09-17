@@ -394,6 +394,7 @@ if __name__ == "__main__":
         #         run object detection function
         #         while object_detected() == True:
         #           print("Stop Sign detected! Waiting...")
+        #           time.sleep(4)
         #           run object detection function
             if curr_pos == goal:
                 break;
