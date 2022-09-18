@@ -68,6 +68,9 @@ def mapping(grid, curr_pos):
     grid = place_objs(grid, obj_coords)
     # do interpolation and padding
 
+    plt.imshow(grid, origin="lower")
+    plt.show()
+
     return grid
 
 
