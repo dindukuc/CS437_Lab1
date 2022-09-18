@@ -30,8 +30,9 @@ def calculate_coords(obj_dist, curr_pos):
     obj_y = -1
 
     for obj in obj_dist:
-        obj_x = curr_pos[0] + obj[1] * math.sin(math.radians(obj[0]))
-        obj_y = curr_pos[1] + obj[1] * math.cos(math.radians(obj[0]))
+        obj_x = round(curr_pos[0] + obj[1] * math.sin(math.radians(obj[0])))
+        obj_y = round(curr_pos[1] + obj[1] * math.cos(math.radians(obj[0])))
+        
         obj_coords.append((obj_x, obj_y))
     
 
