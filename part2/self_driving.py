@@ -156,7 +156,7 @@ def padding(obj_coords):
 
     for obj in obj_coords:
         if valid_coord(obj) == True:
-            temp = points_in_circle(2, obj[0], obj[1])
+            temp = points_in_circle(1, obj[0], obj[1])
             pad_points.append(temp)
     
     # print("Just pad points: ", pad_points)
