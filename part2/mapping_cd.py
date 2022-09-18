@@ -112,7 +112,7 @@ def interpolation(obj_coords):
             if euclidean_dist(obj, next_obj) <= 5:
                 interp_coords.append(gen_interp_points(obj, next_obj))
     
-    # print("interp coords: ", interp_coords)
+    print("interp coords: ", interp_coords)
     return interp_coords
 
 
