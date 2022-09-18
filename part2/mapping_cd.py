@@ -80,7 +80,8 @@ def place_objs(grid, obj_coords):
 
 def gen_interp_points(point1, point2):
     slope, intercept = calc_slope_intercept(point1, point2)
-    
+    print("Slope: ", slope, intercept)
+
     x1 = point1[0]
     y1 = point1[1]
 
@@ -92,23 +93,24 @@ def gen_interp_points(point1, point2):
 
     for x in range(x1, x2):
         y = round(x*slope + intercept)
+        print("Interp x and y: ", x, y)
         interp_coords.append((x, y))
 
 
 
-def interpolation(obj_coord):
+def interpolation(obj_coords):
     next_obj = (-1,-1)
     
     interp_coords = []
 
-    for idx, obj in enumerate(obj_coord):
-        if idx+1 < len(obj_coord):
-            next_obj = obj_coord[idx+1]
+    for idx, obj in enumerate(obj_coords):
+        if idx+1 < len(obj_coords):
+            next_obj = obj_coords[idx+1]
 
             if euclidean_dist(obj, next_obj) <= 5:
                 interp_coords.append(gen_interp_points(obj, next_obj))
     
-    print("interp coords: ", interp_coords)
+    # print("interp coords: ", interp_coords)
     return interp_coords
 
 
