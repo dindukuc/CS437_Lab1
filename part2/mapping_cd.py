@@ -149,7 +149,7 @@ def padding(obj_coords):
     temp = None
 
     for obj in obj_coords:
-        if valid_coord(obj[0], obj[1]) == True:
+        if valid_coord(obj) == True:
             temp = points_in_circle(4, obj[0], obj[1])
             pad_points.append(temp)
     
