@@ -550,7 +550,7 @@ if __name__ == "__main__":
     heading_list = []
 
     curr_pos = (50, 0)
-    goal = (50, 99)
+    goal = (89, 99)
     curr_heading = "forward"
 
     while curr_pos != goal:
@@ -564,8 +564,8 @@ if __name__ == "__main__":
         grid = mapping(grid, curr_pos) #mapping function goes here, takes curr_pos and returns grid
         #print(grid)
 
-        # plt.imshow(grid, origin="lower")
-        # plt.show()
+        plt.imshow(grid, origin="lower")
+        plt.show()
 
         # grid = np.zeros((90,100))
         # grid[51, 0:50] = 1
@@ -583,7 +583,7 @@ if __name__ == "__main__":
         # print(cmd_list)
         # print(heading_list)
 
-        for i in range(20):
+        for i in range(35):
             
             while object_detected(15) == True:
                 print("STOP SIGN DETECTED! Waiting for 4 seconds before checking again...")

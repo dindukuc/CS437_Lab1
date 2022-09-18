@@ -1,0 +1,346 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Exception ignored in: <function TensorImage.__del__ at 0xa7e951d8>
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/tensorflow_lite_support/python/task/vision/core/tensor_image.py", line 104, in __del__
+    image_utils.ImageDataFree(self._image_data)
+AttributeError: module 'tensorflow_lite_support.python.task.vision.core.pybinds.image_utils' has no attribute 'ImageDataFree'
+Traceback (most recent call last):
+  File "/home/pi/picar-4wd/part2/self_driving.py", line 588, in <module>
+    while object_detected(15) == True:
+  File "/home/pi/picar-4wd/part2/self_driving.py", line 535, in object_detected
+    return st.detect_stop_sign(fps)
+  File "/home/pi/picar-4wd/part2/stop_sign_detection.py", line 109, in detect_stop_sign
+    return run(args.model, int(args.cameraId), args.frameWidth, args.frameHeight,
+  File "/home/pi/picar-4wd/part2/stop_sign_detection.py", line 44, in run
+    success, image = cap.read()
+KeyboardInterrupt
