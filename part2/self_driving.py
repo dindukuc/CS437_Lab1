@@ -563,11 +563,14 @@ if __name__ == "__main__":
         grid = mapping(grid, curr_pos) #mapping function goes here, takes curr_pos and returns grid
         #print(grid)
 
+        plt.imshow(grid, origin="lower")
+        plt.show()
+
         # grid = np.zeros((90,100))
         # grid[51, 0:50] = 1
 
 
-        # time.sleep(.001)
+        time.sleep(.001)
 
         print("Generating path...")
         path, cmd_list, heading_list = search(grid, curr_pos, goal)
