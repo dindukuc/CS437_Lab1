@@ -112,8 +112,8 @@ def interpolation(obj_coords):
             if euclidean_dist(obj, next_obj) <= 5:
                 interp_coords.append(gen_interp_points(obj, next_obj))
     
-    interp_coords = [ele for ele in interp_coords if ele != []]
-
+    interp_coords = [coord for coord in interp_coords if coord != []]
+    interp_coords = [item for sublist in interp_coords for item in sublist]
     print("interp coords: ", interp_coords)
     return interp_coords
 
