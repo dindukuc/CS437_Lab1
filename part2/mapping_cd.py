@@ -17,7 +17,10 @@ def calc_slope_intercept(point1, point2):
     x2 = point2[0]
     y2 = point2[1] 
     
-    slope = (y2-y1)/(x2-x1)
+    if x2-x1 != 0:
+        slope = (y2-y1)/(x2-x1)
+    else:
+        slope = 0
 
     intercept = slope*x1 - y1
 
