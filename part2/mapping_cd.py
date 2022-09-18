@@ -10,9 +10,10 @@ import matplotlib.pyplot as plt
 def points_in_circle(radius, x0=0, y0=0):
     x_ = np.arange(x0 - radius - 1, x0 + radius + 1, dtype=int)
     y_ = np.arange(y0 - radius - 1, y0 + radius + 1, dtype=int)
-    x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
+    # x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
     
-    print("all circle points: ", zip(x_[x], y_[y]))
+    print("center:", x0, y0)
+    print("all circle points: ", zip(x_, y_))
 
 
 
