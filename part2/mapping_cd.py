@@ -80,7 +80,7 @@ def place_objs(grid, obj_coords):
 
 def gen_interp_points(point1, point2):
     slope, intercept = calc_slope_intercept(point1, point2)
-    print("Slope: ", slope, intercept)
+    # print("Slope: ", slope, intercept)
 
     x1 = point1[0]
     y1 = point1[1]
@@ -93,8 +93,10 @@ def gen_interp_points(point1, point2):
 
     for x in range(x1, x2):
         y = round(x*slope + intercept)
-        print("Interp x and y: ", x, y)
+        # print("Interp x and y: ", x, y)
         interp_coords.append((x, y))
+    
+    return interp_coords
 
 
 
