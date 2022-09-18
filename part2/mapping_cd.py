@@ -112,6 +112,8 @@ def interpolation(obj_coords):
             if euclidean_dist(obj, next_obj) <= 5:
                 interp_coords.append(gen_interp_points(obj, next_obj))
     
+    interp_coords = [ele for ele in interp_coords if ele != []]
+
     print("interp coords: ", interp_coords)
     return interp_coords
 
@@ -124,7 +126,7 @@ def mapping(grid, curr_pos):
     obj_coords = calculate_coords(obj_dist, curr_pos)
     # print("object coords after inital calc: ", obj_coords)
     obj_coords.append(interpolation(obj_coords))
-    # print("object coords after interp: ", obj_coords)
+    print("object coords after interp: ", obj_coords)
     grid = place_objs(grid, obj_coords)
 
     return grid
