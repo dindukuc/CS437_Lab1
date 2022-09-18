@@ -68,8 +68,8 @@ def place_objs(grid, obj_coords):
     y = -1
     
     for obj in obj_coords:
-        x = int(obj[0])
-        y = int(obj[1])
+        x = round(obj[0])
+        y = round(obj[1])
         if valid_coord((x, y)) == True:
             grid[x, y] = 1        
         else:
@@ -108,6 +108,7 @@ def interpolation(obj_coord):
             if euclidean_dist(obj, next_obj) <= 5:
                 interp_coords.append(gen_interp_points(obj, next_obj))
     
+    print("interp coords: ", interp_coords)
     return interp_coords
 
 
@@ -117,9 +118,9 @@ def interpolation(obj_coord):
 def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
-    print("object coords after inital calc: ", obj_coords)
+    # print("object coords after inital calc: ", obj_coords)
     # obj_coords.append(interpolation(obj_coords))
-    print("object coords after interp: ", obj_coords)
+    # print("object coords after interp: ", obj_coords)
     grid = place_objs(grid, obj_coords)
 
     return grid
