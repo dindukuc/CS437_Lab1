@@ -6,6 +6,24 @@ import matplotlib.pyplot as plt
 
 
 
+
+def euclidean_dist(point1, point2):
+    return math.dist(point1, point2)
+
+def calc_slope_intercept(point1, point2):
+    x1 = point1[0]
+    y1 = point1[1]
+
+    x2 = point2[0]
+    y2 = point2[1] 
+    
+    slope = (y2-y1)/(x2-x1)
+
+    intercept = slope*x1 - y1
+
+    return slope, intercept
+
+
 def calculate_coords(obj_dist, curr_pos):
     obj_coords = []
     obj_x = -1
@@ -55,13 +73,48 @@ def place_objs(grid, obj_coords):
     
     return grid
 
+
+def gen_interp_points(point1, point2):
+    slope, intercept = calc_slope_intercept(point1, point2)
     
+    x1 = point1[0]
+    y1 = point1[1]
+
+    x2 = point2[0]
+    y2 = point2[1] 
+
+    y = -1
+    interp_coords = []
+
+    for x in range(x1, x2):
+        y = round(x*slope + intercept)
+        interp_coords.append((x, y))
+
+
+
+def interpolation(obj_coord):
+    next_obj = (-1,-1)
+    
+    interp_coords = []
+
+    for idx, obj in enumerate(obj_coord):
+        if idx+1 < len(obj_coord):
+            next_obj = obj_coord[idx+1]
+
+            if euclidean_dist(obj, next_obj) <= 5:
+                interp_coords.append(gen_interp_points(obj, next_obj))
+    
+    return interp_coords
+
+
+
+
 
 def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
+    obj_coords.append(interpolation(obj_coords))
     grid = place_objs(grid, obj_coords)
-    # do interpolation and padding
 
     return grid
 

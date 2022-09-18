@@ -453,6 +453,7 @@ if __name__ == "__main__":
         grid = np.zeros((90,100)) # reset grid before regenerating the grid
         
         print("Current Position: ", curr_pos)
+        print("Ultrasonic mapping...")
         grid = mapping(grid, curr_pos) #mapping function goes here, takes curr_pos and returns grid
         #print(grid)
 
@@ -462,6 +463,7 @@ if __name__ == "__main__":
 
         # time.sleep(.001)
 
+        print("Generating path...")
         path, cmd_list, heading_list = search(grid, curr_pos, goal)
         
 
