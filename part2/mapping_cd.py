@@ -12,8 +12,9 @@ def points_in_circle(radius, x0=0, y0=0):
     y_ = np.arange(y0 - radius - 1, y0 + radius + 1, dtype=int)
     # x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
     
-    print("center:", x0, y0)
-    print("all circle points: ", zip(x_, y_))
+    # print("center:", x0, y0)
+    print("all circle points x: ", x_)
+    print("All circle points y: ", y_)
 
 
 
@@ -148,8 +149,9 @@ def padding(obj_coords):
     temp = None
 
     for obj in obj_coords:
-        temp = points_in_circle(4, obj[0], obj[1])
-        pad_points.append(temp)
+        if valid_coord(obj[0], obj[1]) == True:
+            temp = points_in_circle(4, obj[0], obj[1])
+            pad_points.append(temp)
     
     print("Just pad points: ", pad_points)
     return pad_points
