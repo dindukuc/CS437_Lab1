@@ -583,7 +583,7 @@ if __name__ == "__main__":
         # print(cmd_list)
         # print(heading_list)
 
-        for i in range(10):
+        for i in range(20):
             
             while object_detected(15) == True:
                 print("STOP SIGN DETECTED! Waiting for 4 seconds before checking again...")
