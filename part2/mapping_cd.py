@@ -7,6 +7,16 @@ import matplotlib.pyplot as plt
 
 
 
+def points_in_circle(radius, x0=0, y0=0):
+    x_ = np.arange(x0 - radius - 1, x0 + radius + 1, dtype=int)
+    y_ = np.arange(y0 - radius - 1, y0 + radius + 1, dtype=int)
+    x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
+    
+    for x, y in zip(x_[x], y_[y]):
+        yield x, y
+
+
+
 def euclidean_dist(point1, point2):
     return math.dist(point1, point2)
 
@@ -134,15 +144,29 @@ def interpolation(obj_coords):
 
 
 def padding(obj_coords):
-    pass;
+    pad_points = []
+    temp = None
+
+    for obj in obj_coords:
+        temp = points_in_circle(4, obj[0], obj[1])
+        pad_points.append(temp)
+    
+    print("Just pad points: ", pad_points)
+    return pad_points
+
+
 
 
 def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
-    # print("object coords after inital calc: ", obj_coords)
+    
+    print("object coords before padding: ", obj_coords)
+    obj_coords.extend(padding(obj_coords))
+    print("object coords after padding: ", obj_coords)
+
     obj_coords.extend(interpolation(obj_coords))
-    print("object coords after interp: ", obj_coords)
+    # print("object coords after interp: ", obj_coords)
     grid = place_objs(grid, obj_coords)
 
     return grid
