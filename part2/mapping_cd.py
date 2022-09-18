@@ -16,8 +16,9 @@ def points_in_circle(radius, x0=0, y0=0):
     pad = [(x, y) for x in x_ for y in y_]
 
     # print("center:", x0, y0)
-    print("all circle points: ", pad)
+    # print("all circle points: ", pad)
     # print("All circle points y: ", y_)
+    return pad
 
 
 
@@ -149,7 +150,7 @@ def interpolation(obj_coords):
 
 def padding(obj_coords):
     pad_points = []
-    temp = None
+    temp = []
 
     for obj in obj_coords:
         if valid_coord(obj) == True:
