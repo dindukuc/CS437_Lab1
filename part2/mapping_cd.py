@@ -109,7 +109,7 @@ def interpolation(obj_coords):
         if idx+1 < len(obj_coords):
             next_obj = obj_coords[idx+1]
 
-            if euclidean_dist(obj, next_obj) <= 5:
+            if euclidean_dist(obj, next_obj) <= 10:
                 interp_coords.append(gen_interp_points(obj, next_obj))
     
     interp_coords = [coord for coord in interp_coords if coord != []]
