@@ -3,7 +3,7 @@ import picar_4wd as fc              #import picar object
 import numpy as np 
 import math
 import matplotlib.pyplot as plt
-import itertools as iter
+# import itertools as iter
 
 
 
@@ -13,7 +13,7 @@ def points_in_circle(radius, x0=0, y0=0):
     y_ = np.arange(y0 - radius - 1, y0 + radius + 1, dtype=int)
     # x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
     
-    pad = iter.product(x_, y_)
+    pad = [(x, y) for x in x_ for y in y_]
 
     # print("center:", x0, y0)
     print("all circle points: ", pad)
