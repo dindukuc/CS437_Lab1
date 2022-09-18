@@ -11,6 +11,19 @@ import stop_sign_detection as st
 
 
 
+def points_in_circle(radius, x0=0, y0=0):
+    x_ = np.arange(x0 - radius - 1, x0 + radius + 1, dtype=int)
+    y_ = np.arange(y0 - radius - 1, y0 + radius + 1, dtype=int)
+    # x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
+    
+    pad = [(x, y) for x in x_ for y in y_]
+
+    # print("center:", x0, y0)
+    # print("all circle points: ", pad)
+    # print("All circle points y: ", y_)
+    return pad
+
+
 def euclidean_dist(point1, point2):
     return math.dist(point1, point2)
 
@@ -44,7 +57,7 @@ def calculate_coords(obj_dist, curr_pos):
     
 
     return obj_coords
-    
+
 
 def measure_dist():
     obj_dist = []
@@ -52,7 +65,7 @@ def measure_dist():
         dist_val = fc.get_distance_at(i)
         time.sleep(.05)
         obj_dist.append((i, dist_val))
-    
+
     # print(obj_dist)
     return obj_dist
 
@@ -83,7 +96,7 @@ def place_objs(grid, obj_coords):
 
 
 def gen_interp_points(point1, point2):
-    slope, intercept = calc_slope_intercept(point1, point2)
+    # slope, intercept = calc_slope_intercept(point1, point2)
     # print("Slope: ", slope, intercept)
 
     x1 = point1[0]
@@ -92,13 +105,28 @@ def gen_interp_points(point1, point2):
     x2 = point2[0]
     y2 = point2[1] 
 
+
     y = -1
     interp_coords = []
 
-    for x in range(x1, x2):
-        y = round(x*slope + intercept)
-        # print("Interp x and y: ", x, y)
-        interp_coords.append((x, y))
+
+    if x2 == x1:
+        for y in range(y1, y2):
+            # print("Interp x and y: ", x, y)
+            interp_coords.append((x1, y))
+    elif y1 == y2:
+        for x in range(x1, x2):
+            # print("Interp x and y: ", x, y)
+            interp_coords.append((x, y1))
+    elif x2-x1 != 0:
+        slope = (y2-y1)/(x2-x1)
+        intercept = slope*x1 - y1
+        
+        for x in range(x1, x2):
+            y = round(x*slope + intercept)
+            # print("Interp x and y: ", x, y)
+            interp_coords.append((x, y))
+
     
     return interp_coords
 
@@ -123,19 +151,34 @@ def interpolation(obj_coords):
 
 
 def padding(obj_coords):
-    pass;
+    pad_points = []
+    temp = []
+
+    for obj in obj_coords:
+        if valid_coord(obj) == True:
+            temp = points_in_circle(4, obj[0], obj[1])
+            pad_points.append(temp)
+    
+    # print("Just pad points: ", pad_points)
+    pad_points = [coord for coord in pad_points if coord != []]
+    pad_points = [item for sublist in pad_points for item in sublist]
+    return pad_points
+
 
 
 def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
-    # print("object coords after inital calc: ", obj_coords)
+    
+    # print("object coords before padding: ", obj_coords)
+    obj_coords.extend(padding(obj_coords))
+    # print("object coords after padding: ", obj_coords)
+
     obj_coords.extend(interpolation(obj_coords))
     # print("object coords after interp: ", obj_coords)
     grid = place_objs(grid, obj_coords)
 
     return grid
-
 
 # ***************** Mapping functions end***************
 

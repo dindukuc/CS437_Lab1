@@ -169,9 +169,9 @@ def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
     
-    print("object coords before padding: ", obj_coords)
+    # print("object coords before padding: ", obj_coords)
     obj_coords.extend(padding(obj_coords))
-    print("object coords after padding: ", obj_coords)
+    # print("object coords after padding: ", obj_coords)
 
     obj_coords.extend(interpolation(obj_coords))
     # print("object coords after interp: ", obj_coords)
