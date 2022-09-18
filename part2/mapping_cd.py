@@ -12,8 +12,7 @@ def points_in_circle(radius, x0=0, y0=0):
     y_ = np.arange(y0 - radius - 1, y0 + radius + 1, dtype=int)
     x, y = np.where((x_[:,np.newaxis] - x0)**2 + (y_ - y0)**2 <= radius**2)
     
-    for x, y in zip(x_[x], y_[y]):
-        yield x, y
+    print("all circle points: ", zip(x_[x], y_[y]))
 
 
 
