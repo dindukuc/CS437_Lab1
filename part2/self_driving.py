@@ -506,7 +506,7 @@ if __name__ == "__main__":
     heading_list = []
 
     curr_pos = (50, 0)
-    goal = (89, 99)
+    goal = (50, 99)
     curr_heading = "forward"
 
     while curr_pos != goal:
