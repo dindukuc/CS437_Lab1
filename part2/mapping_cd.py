@@ -118,7 +118,8 @@ def interpolation(obj_coords):
     return interp_coords
 
 
-
+def padding(obj_coords):
+    pass;
 
 
 def mapping(grid, curr_pos):

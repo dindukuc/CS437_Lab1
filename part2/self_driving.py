@@ -11,14 +11,35 @@ import stop_sign_detection as st
 
 
 
+def euclidean_dist(point1, point2):
+    return math.dist(point1, point2)
+
+def calc_slope_intercept(point1, point2):
+    x1 = point1[0]
+    y1 = point1[1]
+
+    x2 = point2[0]
+    y2 = point2[1] 
+    
+    if x2-x1 != 0:
+        slope = (y2-y1)/(x2-x1)
+    else:
+        slope = 0
+
+    intercept = slope*x1 - y1
+
+    return slope, intercept
+
+
 def calculate_coords(obj_dist, curr_pos):
     obj_coords = []
     obj_x = -1
     obj_y = -1
 
     for obj in obj_dist:
-        obj_x = curr_pos[0] + obj[1] * math.sin(math.radians(obj[0]))
-        obj_y = curr_pos[1] + obj[1] * math.cos(math.radians(obj[0]))
+        obj_x = round(curr_pos[0] + obj[1] * math.sin(math.radians(obj[0])))
+        obj_y = round(curr_pos[1] + obj[1] * math.cos(math.radians(obj[0])))
+        
         obj_coords.append((obj_x, obj_y))
     
 
@@ -51,8 +72,8 @@ def place_objs(grid, obj_coords):
     y = -1
     
     for obj in obj_coords:
-        x = int(obj[0])
-        y = int(obj[1])
+        x = round(obj[0])
+        y = round(obj[1])
         if valid_coord((x, y)) == True:
             grid[x, y] = 1        
         else:
@@ -60,16 +81,58 @@ def place_objs(grid, obj_coords):
     
     return grid
 
+
+def gen_interp_points(point1, point2):
+    slope, intercept = calc_slope_intercept(point1, point2)
+    # print("Slope: ", slope, intercept)
+
+    x1 = point1[0]
+    y1 = point1[1]
+
+    x2 = point2[0]
+    y2 = point2[1] 
+
+    y = -1
+    interp_coords = []
+
+    for x in range(x1, x2):
+        y = round(x*slope + intercept)
+        # print("Interp x and y: ", x, y)
+        interp_coords.append((x, y))
     
+    return interp_coords
+
+
+
+def interpolation(obj_coords):
+    next_obj = (-1,-1)
+    
+    interp_coords = []
+
+    for idx, obj in enumerate(obj_coords):
+        if idx+1 < len(obj_coords):
+            next_obj = obj_coords[idx+1]
+
+            if euclidean_dist(obj, next_obj) <= 10:
+                interp_coords.append(gen_interp_points(obj, next_obj))
+    
+    interp_coords = [coord for coord in interp_coords if coord != []]
+    interp_coords = [item for sublist in interp_coords for item in sublist]
+    # print("interp coords: ", interp_coords)
+    return interp_coords
+
+
+def padding(obj_coords):
+    pass;
+
 
 def mapping(grid, curr_pos):
     obj_dist = measure_dist()
     obj_coords = calculate_coords(obj_dist, curr_pos)
+    # print("object coords after inital calc: ", obj_coords)
+    obj_coords.extend(interpolation(obj_coords))
+    # print("object coords after interp: ", obj_coords)
     grid = place_objs(grid, obj_coords)
-    # do interpolation and padding
-
-    plt.imshow(grid, origin="lower")
-    plt.show()
 
     return grid
 
